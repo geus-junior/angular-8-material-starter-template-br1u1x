@@ -1,0 +1,20 @@
+<div class="combobox-inner">
+  <input readonly type="text" [value]="optionSelected?.name" />
+  <mat-icon class="clear-combobox" (click)="optionSelected = null"
+    >close</mat-icon
+  >
+  <mat-icon class="open-combobox">arrow_drop_down</mat-icon>
+
+  <div class="combobox-dropdown">
+    <div class="search">
+      <input type="text" />
+      <mat-icon class="clear-combobox" (click)="optionSelected = null"
+        >close</mat-icon
+      >
+    </div>
+
+    <span *ngFor="let option of options" (click)="onSelectOption(option)">
+      {{ option.name }}
+    </span>
+  </div>
+</div>

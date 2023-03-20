@@ -1,0 +1,75 @@
+.combobox-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #696969;
+  border-radius: 4px;
+  padding-inline: 0.8rem;
+  cursor: pointer;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.combobox-inner > input {
+  cursor: pointer;
+  padding-block: 0.8rem;
+  flex: 1;
+  height: 100%;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+}
+
+.combobox-inner > mat-icon {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.combobox-inner > .clear-combobox {
+  font-size: 1.8rem;
+ 
+  &:hover {
+    font-size: 1.9rem;
+  }
+}
+.combobox-inner > .open-combobox {
+  font-size: 2.4rem;
+}
+
+.combobox-dropdown {
+  position: absolute;  
+  top: 3.5rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 100%;
+  max-height: 250px;
+  border: 1px solid #ebebeb;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #dadce0;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+  }
+}
+
+.combobox-dropdown > span {
+  padding: 1rem;
+
+  &:hover {
+    background-color: #ebebeb;
+  }
+}
