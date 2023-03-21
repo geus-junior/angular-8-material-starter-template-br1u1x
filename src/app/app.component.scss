@@ -106,6 +106,7 @@
   min-height: 4rem;
   max-height: 4rem;
   padding-inline: 8px;
+  transition: all .2s;
 
   &:active {
     background-color: #dbdbdb;
@@ -113,5 +114,15 @@
 
   &:hover {
     background-color: #ebebeb;
+  }
+}
+
+.active {
+  background-color: #ee4b4b;
+  color: #fff;
+
+  &:hover {
+    background-color: #ee3d3d;
+    color: #fff;
   }
 }

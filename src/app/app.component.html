@@ -25,6 +25,7 @@
       <li
         *ngFor="let option of options"
         class="combobox-option"
+        [class.active]="option === optionSelected"
         (click)="onSelectOption(option, !option.selected)"
       >
         <input type="checkbox" *ngIf="multiple" [(ngModel)]="option.selected" />
