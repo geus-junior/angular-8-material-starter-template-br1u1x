@@ -1,20 +1,35 @@
 <div class="combobox-inner">
-  <input readonly type="text" [value]="optionSelected?.name" />
-  <mat-icon class="clear-combobox" (click)="optionSelected = null"
+  <input readonly type="text" [value]="getOptionSelected()" />
+  <mat-icon
+    class="clear-combobox"
+    *ngIf="showClearCombobox"
+    (click)="resetOptionSelected()"
     >close</mat-icon
   >
   <mat-icon class="open-combobox">arrow_drop_down</mat-icon>
 
   <div class="combobox-dropdown">
-    <div class="search">
-      <input type="text" />
-      <mat-icon class="clear-combobox" (click)="optionSelected = null"
-        >close</mat-icon
-      >
+    <div class="search-combobox combobox-option">
+      <input
+        type="checkbox"
+        *ngIf="multiple"
+        [(ngModel)]="checkboxAll"
+        [indeterminate]="indeterminateCheckboxAll"
+        (change)="onToggleCheckboxAll($event)"
+      />
+      <input type="text" placeholder="Pesquisar..." />
+      <mat-icon (click)="optionSelected = null">close</mat-icon>
     </div>
 
-    <span *ngFor="let option of options" (click)="onSelectOption(option)">
-      {{ option.name }}
-    </span>
+    <ul class="list-options-combobox">
+      <li
+        *ngFor="let option of options"
+        class="combobox-option"
+        (click)="onSelectOption(option, !option.selected)"
+      >
+        <input type="checkbox" *ngIf="multiple" [(ngModel)]="option.selected" />
+        {{ option.name }}
+      </li>
+    </ul>
   </div>
 </div>
